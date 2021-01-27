@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+import { Row, Banner, Nav } from 'template'
+import { requests } from 'api/request'
+import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Nav />
+      <Banner />
+      <Row
+        title="NETFLIX ORIGINALS"
+        fetchUrl={requests.feachNetflixOriginals}
+        isLargeRow={true}
+      />
+      <Row
+        title="Top Rated"
+        fetchUrl={requests.feacthTopRated}
+        isLargeRow={false}
+      />
+      <Row
+        title="Action Movies"
+        fetchUrl={requests.feacthActionMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Comedy Movies"
+        fetchUrl={requests.feacthComedyMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Horror Movies"
+        fetchUrl={requests.feacthHorrorMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Romance Movies"
+        fetchUrl={requests.feacthRomanceMovies}
+        isLargeRow={false}
+      />
+      <Row
+        title="Documentaries"
+        fetchUrl={requests.feacthDocumentMovies}
+        isLargeRow={false}
+      />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
